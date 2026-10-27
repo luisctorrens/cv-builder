@@ -105,7 +105,7 @@ public/
 
 - **Persistência mockada**: `src/lib/curriculos-storage.ts` funciona como uma API falsa, com latência simulada para exibir os Skeletons. Os exemplos são carregados com `import()` só quando o `localStorage` ainda está vazio.
 - **Upload simulado**: a imagem é validada (JPG, PNG ou WEBP de até 2 MB), reduzida para 320 px e salva como *data URL* junto do currículo. As fotos dos exemplos ficam em `public/avatars`.
-- **Compatibilidade com React 19**: a versão `3.0.0-alpha.12` do `react-input-mask-next` chama `ReactDOM.findDOMNode`, que foi removido no React 19. O script `scripts/corrigir-react-input-mask.mjs` roda no `postinstall` e troca a chamada pelo próprio `ref` do input. A versão do pacote está fixada para que o trecho corrigido não mude.
+- **Compatibilidade com React 19**: a versão `3.0.0-alpha.12` do `react-input-mask-next` chama `ReactDOM.findDOMNode`, que foi removido no React 19. O script `scripts/corrigir-react-input-mask.mjs` roda no `postinstall` e troca a chamada pelo próprio `ref` do input. A versão do pacote está fixada para que o trecho corrigido não mude. O npm marca esse pacote como descontinuado; ele foi mantido porque o enunciado o exige.
 - **Hidratação com rewrites**: o servidor renderiza pelo caminho interno e o navegador exibe a URL amigável. Por isso, o estado ativo do menu reconhece os dois caminhos. Em rotas dinâmicas, o componente fica dentro de `Suspense`, como exige o Cache Components.
 - **Privacidade**: os CPFs e telefones dos exemplos são fictícios. Na página de detalhes, o CPF aparece parcialmente oculto.
 
